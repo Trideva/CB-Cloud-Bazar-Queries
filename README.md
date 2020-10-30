@@ -13,4 +13,12 @@ Some hunting queries you can use. Inspired by a blog by Red Canary (https://redc
 (process_name:svchost.exe NOT process_cmdline:*)
 (process_name:svchost.exe NOT process_cmdline:"-k)"
 ```
+Split the query up due to potential false positives in the environment. 
 ## Detection Opportunity 5: Attempted lateral movement via WMI + PowerShell + Cobalt Strike
+```
+(parent_name:wmiprvse.exe AND process_name:cmd.exe AND childproc_name:powershell.exe)
+```
+
+## Detection Opportunity 6: Lateral movement via Cobalt Strike’s SMB PsExec module
+```
+((process_name:rundll32.exe NOT process_cmdline:* AND netconn_count:[1 TO *]))
