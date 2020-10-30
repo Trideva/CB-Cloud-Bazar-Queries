@@ -31,3 +31,9 @@ See Florian Roth's [Encoded Powershell rule for more ideas](https://github.com/N
 ```((process_name:rundll32.exe NOT process_cmdline:* AND netconn_count:[1 TO *]))```
 
 ## Detection Opportunity 7: Enumerating enterprise administrator accounts
+```(process_name:net.exe AND (process_cmdline:net\ \ group\ \"enterprise\ admins\"\ \/dom*))```
+
+## Detection Opportunity 8: Credential access using lsass from regsvr32
+```
+(process_name:regsvr32.exe NOT process_cmdline:*)
+(process_name:regsvr32.exe AND netconn_count:[1 TO *])
