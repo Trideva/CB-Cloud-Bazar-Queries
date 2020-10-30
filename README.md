@@ -7,8 +7,10 @@ Some hunting queries you can use. Inspired by a blog by Red Canary (https://redc
 ## Detection Opportunity #3 - Detection Opportunity 3: Enumerating domain admins with net group
 ```(process_name:net.exe AND (process_cmdline:net\ \ group\ \"domain\ admins\"\ \/dom*))```
 ## Detection Opportunity 4: Process hollowing of explorer.exe
-```(process_name:svchost.exe NOT parent_name:services.exe)
+```
+(process_name:svchost.exe NOT parent_name:services.exe)
 (process_name:svchost.exe AND parent_name:explorer.exe)
 (process_name:svchost.exe NOT process_cmdline:*)
-(process_name:svchost.exe NOT process_cmdline:"-k)"```
+(process_name:svchost.exe NOT process_cmdline:"-k)"
+```
 ## Detection Opportunity 5: Attempted lateral movement via WMI + PowerShell + Cobalt Strike
