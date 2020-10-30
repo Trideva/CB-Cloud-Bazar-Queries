@@ -1,6 +1,6 @@
 # CB-Cloud-Bazar-Queries
 Some hunting queries you can use. 
-Inspired by a blog by Red Canary and @merlos1977 on Twitter. The blog [can be found here](https://redcanary.com/blog/how-one-hospital-thwarted-a-ryuk-ransomware-outbreak/) and you can find the [Microsoft Defender queries here](https://github.com/gmellini/Microsoft-Defender-Security-Center-Hunting-Queries).
+Inspired by a blog by Red Canary and @merlos1977 on Twitter. The blog [can be found here](https://redcanary.com/blog/how-one-hospital-thwarted-a-ryuk-ransomware-outbreak/) and you can find the [Microsoft Defender queries here](https://github.com/gmellini/Microsoft-Defender-Security-Center-Hunting-Queries). Your Carbon Black environment may have coverage for these already, so it's a good idea to compare with existing feeds you're subscribed to. Happy hunting!
 
 ## Detection Opportunity #1 - Process Hollowing of cmd.exe
 ```((process_name:cmd.exe NOT process_cmdline:* AND netconn_count:[1 TO *]))```
