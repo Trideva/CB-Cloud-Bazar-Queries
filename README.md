@@ -1,8 +1,6 @@
 # CB-Cloud-Bazar-Queries
 Some hunting queries you can use. 
-Inspired by a blog by Red Canary and @merlos1977 on Twitter.
-https://redcanary.com/blog/how-one-hospital-thwarted-a-ryuk-ransomware-outbreak/
-https://github.com/gmellini/Microsoft-Defender-Security-Center-Hunting-Queries
+Inspired by a blog by Red Canary and @merlos1977 on Twitter. The blog [can be found here](https://redcanary.com/blog/how-one-hospital-thwarted-a-ryuk-ransomware-outbreak/) and you can find the [Microsoft Defender queries here](https://github.com/gmellini/Microsoft-Defender-Security-Center-Hunting-Queries)
 ## Detection Opportunity #1 - Process Hollowing of cmd.exe
 ```((process_name:cmd.exe NOT process_cmdline:* AND netconn_count:[1 TO *]))```
 ## Detection Opportunity #2 - Detection Opportunity 2: Enumerating domain trusts activity with nltest.exe
