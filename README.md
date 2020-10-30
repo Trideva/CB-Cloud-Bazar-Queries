@@ -57,4 +57,5 @@ I recommend playing around with this a bit in your environment, this is just an 
 
 ## Detection Opportunity 10: Adfind extracting information from Active Directory
 ```((process_cmdline:adfind.exe\ \ \-f\ objectclass=trusteddomain) OR (process_cmdline:adfind.exe\ \ \-sc\ trustdmp))```
+
 Carbon Black has released content for this, but you could easily rig something simple together like the above example.
